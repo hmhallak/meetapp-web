@@ -1,9 +1,30 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { FaPlusCircle, FaChevronRight } from 'react-icons/fa';
 import api from '~/services/api';
-// import { Container } from './styles';
+
+import { Container, Meetup } from './styles';
 
 export default function Dashboard() {
-  api.get('meetups');
+  return (
+    <Container>
+      <header>
+        <strong>Meus meetups</strong>
+        <button type="button">
+          <FaPlusCircle />
+          Novo meetup
+        </button>
+      </header>
 
-  return <h1>Dashboard</h1>;
+      <ul>
+        <Meetup>
+          <strong>Meetup do React Native</strong>
+          <Link to="/meetup">
+            <span>30 de Novembro, às 20h</span>
+            <FaChevronRight color="#fff" size={14} />
+          </Link>
+        </Meetup>
+      </ul>
+    </Container>
+  );
 }
