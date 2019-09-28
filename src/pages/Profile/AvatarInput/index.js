@@ -49,7 +49,7 @@ export default function AvatarInput() {
           type="file"
           id="avatar"
           accept="image/*"
-          dadta-file={file}
+          data-file={file}
           onChange={handleChange}
           ref={ref}
         />
