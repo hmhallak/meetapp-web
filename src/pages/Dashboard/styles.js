@@ -54,6 +54,11 @@ export const Meetup = styled.li`
   background: rgba(0, 0, 0, 0.2);
   color: #fff;
   border-radius: 6px;
+  margin: 10px 0;
+
+  strong {
+    font-size: 16px;
+  }
 
   a {
     display: flex;
