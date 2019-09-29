@@ -18,7 +18,7 @@ export const Container = styled.div`
       color: #fff;
     }
 
-    button {
+    a {
       display: flex;
       padding: 0 15px;
       margin: 5px 0 0;
@@ -60,7 +60,7 @@ export const Meetup = styled.li`
     font-size: 16px;
   }
 
-  a {
+  div {
     display: flex;
     color: #fff;
     align-items: center;

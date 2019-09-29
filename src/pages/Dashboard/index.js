@@ -33,29 +33,28 @@ export default function Dashboard() {
     loadMeetups();
   }, []);
 
-  console.tron.log(meetups);
   return (
     <Container>
       <header>
         <strong>Meus meetups</strong>
-        <button type="button">
+        <Link to="/new">
           <FaPlusCircle />
           Novo meetup
-        </button>
+        </Link>
       </header>
 
       <ul>
         {meetups.map(meetup => (
-          <Meetup key={meetup.id}>
-            <Link to="/meetup">
+          <Link key={meetup.id} to={`/meetup/${encodeURIComponent(meetup.id)}`}>
+            <Meetup>
               <strong>{meetup.title}</strong>
-            </Link>
 
-            <Link to="/meetup">
-              <span>{meetup.dateFormatted}</span>
-              <FaChevronRight color="#fff" size={14} />
-            </Link>
-          </Meetup>
+              <div>
+                <span>{meetup.dateFormatted}</span>
+                <FaChevronRight color="#fff" size={14} />
+              </div>
+            </Meetup>
+          </Link>
         ))}
       </ul>
     </Container>
