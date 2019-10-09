@@ -3,7 +3,7 @@ import { Form, Input } from '@rocketseat/unform';
 import { FaPlusCircle, FaCamera } from 'react-icons/fa';
 import api from '~/services/api';
 
-import BannerInput from '~/pages/Meetup/BannerInput';
+// import BannerInput from '~/pages/Meetup/BannerInput';
 
 import { Container, Image } from './styles';
 
