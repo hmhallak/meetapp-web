@@ -58,7 +58,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Image = styled.div`
+export const SelectImage = styled.div`
   width: 940px;
   height: 300px;
   background: rgba(0, 0, 0, 0.4);
