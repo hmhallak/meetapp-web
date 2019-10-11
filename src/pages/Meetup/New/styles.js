@@ -32,7 +32,7 @@ export const Container = styled.div`
       height: 200px;
     }
 
-    button {
+    > button {
       display: flex;
       align-self: flex-end;
       padding: 0 15px;
