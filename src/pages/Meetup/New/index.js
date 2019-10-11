@@ -9,6 +9,7 @@ import history from '~/services/history';
 
 import { Container } from './styles';
 import BannerInput from '~/pages/Meetup/components/BannerInput';
+import DatePicker from '~/pages/Meetup/components/DatePicker';
 
 export default function New() {
   async function handleSubmit({
@@ -37,7 +38,8 @@ export default function New() {
         <Input name="title" placeholder="Título do Meetup" />
         <Input multiline name="description" placeholder="Descrição completa" />
 
-        <Input name="date" placeholder="Data do meetup" />
+        {/* <Input name="date" placeholder="Data do meetup" /> */}
+        <DatePicker name="date" placeholder="Data do meetup" time />
         <Input name="location" placeholder="Localização" />
 
         <button type="submit">
