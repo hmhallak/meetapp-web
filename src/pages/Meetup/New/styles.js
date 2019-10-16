@@ -18,7 +18,7 @@ export const Container = styled.div`
       height: 44px;
       padding: 0 15px;
       color: #fff;
-      margin: 0 0 10px;
+      margin: 5px 0 10px;
 
       &::placeholder {
         color: rgba(255, 255, 255, 0.7);
@@ -30,6 +30,13 @@ export const Container = styled.div`
       padding: 15px;
       resize: none;
       height: 200px;
+    }
+
+    span {
+      color: #f64c75;
+      align-self: flex-start;
+      margin: 0 0 10px;
+      font-weight: bold;
     }
 
     > button {
