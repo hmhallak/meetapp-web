@@ -8,7 +8,7 @@ import { Container } from './styles';
 
 import 'react-datepicker/dist/react-datepicker.css';
 
-export default function DatePicker({ name, placeholder, time }) {
+export default function DatePicker({ name, placeholder }) {
   const ref = useRef(null);
   const { fieldName, registerField, defaultValue, error } = useField(name);
   const [selected, setSelected] = useState(defaultValue);
@@ -24,7 +24,6 @@ export default function DatePicker({ name, placeholder, time }) {
     });
   }, [ref.current, fieldName]); // eslint-disable-line
 
-  console.tron.log(time);
   return (
     <Container>
       <ReactDatePicker
@@ -36,7 +35,7 @@ export default function DatePicker({ name, placeholder, time }) {
         showTimeSelect
         timeFormat="HH:mm"
         timeCaption="Horário"
-        dateFormat="MMMM d, yyyy h:mm aa"
+        dateFormat="MMMM d, yyyy HH:mm"
         locale={pt}
       />
       {error && <span>{error}</span>}

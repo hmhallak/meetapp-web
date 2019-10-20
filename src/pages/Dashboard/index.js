@@ -18,10 +18,11 @@ export default function Dashboard() {
       const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
       const data = response.data.map(meetup => {
-        const date = utcToZonedTime(parseISO(meetup.date), timezone);
+        const date = utcToZonedTime(meetup.date, timezone);
+
         return {
           ...meetup,
-          dateFormatted: format(date, "d 'de' MMMM, 'às' H'h'", {
+          dateFormatted: format(date, "d 'de' MMMM, 'às' HH:mm'h'", {
             locale: pt,
           }),
         };

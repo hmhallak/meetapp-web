@@ -8,7 +8,6 @@ import { Container, SelectImage } from './styles';
 export default function BannerInput({ name }) {
   const { fieldName, registerField } = useField(name);
 
-  console.tron.log(fieldName);
   const [file, setFile] = useState([]);
   const [preview, setPreview] = useState([]);
   const [loaded, setLoaded] = useState(false);

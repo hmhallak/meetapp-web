@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { format, parseISO } from 'date-fns';
 import pt from 'date-fns/locale/pt';
-import { utcToZonedTime } from 'date-fns-tz';
+import { utcToZonedTime, zonedTimeToUtc } from 'date-fns-tz';
 import { FaEdit, FaTrash, FaCalendar, FaMapMarkerAlt } from 'react-icons/fa';
+import history from '~/services/history';
 import api from '~/services/api';
 
 import { Container, Meetup } from './styles';
@@ -20,11 +21,11 @@ export default function Details({ match }) {
 
       const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
-      const date = utcToZonedTime(parseISO(response.data.date), timezone);
+      const date = utcToZonedTime(response.data.date, timezone);
 
       const data = {
         ...response.data,
-        dateFormatted: format(date, "d 'de' MMMM, 'às' H'h'", {
+        dateFormatted: format(date, "d 'de' MMMM, 'às' H:m'h'", {
           locale: pt,
         }),
       };
@@ -33,7 +34,7 @@ export default function Details({ match }) {
     }
 
     loadMeetup();
-  }, [meetup_id]);
+  }, [meetup.date, meetup_id]);
 
   return (
     <Container>

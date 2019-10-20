@@ -28,7 +28,7 @@ export default function New() {
     location,
     banner_id,
   }) {
-    const response = await api.post('meetups', {
+    await api.post('meetups', {
       title,
       description,
       location,
@@ -36,7 +36,6 @@ export default function New() {
       banner_id,
     });
 
-    console.tron.log(response);
     history.push('/dashboard');
   }
 
@@ -48,7 +47,7 @@ export default function New() {
         <Input multiline name="description" placeholder="Descrição completa" />
 
         {/* <Input name="date" placeholder="Data do meetup" /> */}
-        <DatePicker name="date" placeholder="Data do meetup" time />
+        <DatePicker name="date" placeholder="Data do meetup" />
         <Input name="location" placeholder="Localização" />
 
         <button type="submit">
