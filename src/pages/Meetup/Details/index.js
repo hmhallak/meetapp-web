@@ -36,6 +36,12 @@ export default function Details({ match }) {
     loadMeetup();
   }, [meetup.date, meetup_id]);
 
+  async function cancelMeetup() {
+    console.tron.log(meetup.id);
+    await api.delete(`meetups/${meetup.id}`);
+    history.push('/dashboard');
+  }
+
   return (
     <Container>
       <header>
@@ -45,7 +51,7 @@ export default function Details({ match }) {
             <FaEdit />
             Editar
           </Link>
-          <button type="button">
+          <button type="button" onClick={cancelMeetup}>
             <FaTrash />
             Cancelar
           </button>
