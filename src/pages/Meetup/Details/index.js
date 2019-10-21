@@ -26,7 +26,7 @@ export default function Details({ match }) {
 
       const data = {
         ...response.data,
-        dateFormatted: format(date, "d 'de' MMMM, 'às' H:m'h'", {
+        dateFormatted: format(date, "d 'de' MMMM, 'às' HH:mm'h'", {
           locale: pt,
         }),
       };

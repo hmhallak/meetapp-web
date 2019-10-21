@@ -35,7 +35,7 @@ export default function DatePicker({ name, placeholder }) {
         showTimeSelect
         timeFormat="HH:mm"
         timeCaption="Horário"
-        dateFormat="MMMM d, yyyy HH:mm"
+        dateFormat="d 'de' MMMM , yyyy 'às' HH:mm'h'"
         locale={pt}
       />
       {error && <span>{error}</span>}
