@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { format, parseISO } from 'date-fns';
+import { format } from 'date-fns';
 import pt from 'date-fns/locale/pt';
-import { utcToZonedTime, zonedTimeToUtc } from 'date-fns-tz';
+import { utcToZonedTime } from 'date-fns-tz';
 import { FaEdit, FaTrash, FaCalendar, FaMapMarkerAlt } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 import history from '~/services/history';
 import api from '~/services/api';
 
@@ -38,8 +39,12 @@ export default function Details({ match }) {
 
   async function cancelMeetup() {
     console.tron.log(meetup.id);
-    await api.delete(`meetups/${meetup.id}`);
-    history.push('/dashboard');
+    try {
+      await api.delete(`meetups/${meetup.id}`);
+      history.push('/dashboard');
+    } catch (error) {
+      toast.error(error.response.data.error);
+    }
   }
 
   return (
