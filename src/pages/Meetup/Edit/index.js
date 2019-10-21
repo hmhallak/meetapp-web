@@ -61,6 +61,7 @@ export default function Edit({ match }) {
         date,
         banner_id,
       });
+      toast.success('Meetup atualizado com sucesso!');
       history.push('/dashboard');
     } catch (error) {
       toast.error(error.response.data.error);
