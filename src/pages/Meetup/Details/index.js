@@ -41,6 +41,7 @@ export default function Details({ match }) {
     console.tron.log(meetup.id);
     try {
       await api.delete(`meetups/${meetup.id}`);
+      toast.success('O meetup foi excluído com sucesso!');
       history.push('/dashboard');
     } catch (error) {
       toast.error(error.response.data.error);
