@@ -7,8 +7,6 @@ import api from '~/services/api';
 
 import history from '~/services/history';
 
-// import BannerInput from '~/pages/Meetup/BannerInput';
-
 import { Container } from './styles';
 import BannerInput from '~/pages/Meetup/components/BannerInput';
 import DatePicker from '~/pages/Meetup/components/DatePicker';
