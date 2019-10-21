@@ -2,6 +2,7 @@ import React from 'react';
 import { Form, Input } from '@rocketseat/unform';
 import { FaPlusCircle } from 'react-icons/fa';
 import * as Yup from 'yup';
+import { toast } from 'react-toastify';
 import api from '~/services/api';
 
 import history from '~/services/history';
@@ -28,15 +29,18 @@ export default function New() {
     location,
     banner_id,
   }) {
-    await api.post('meetups', {
-      title,
-      description,
-      location,
-      date,
-      banner_id,
-    });
-
-    history.push('/dashboard');
+    try {
+      await api.post('meetups', {
+        title,
+        description,
+        location,
+        date,
+        banner_id,
+      });
+      history.push('/dashboard');
+    } catch (error) {
+      toast.error(error.response.data.error);
+    }
   }
 
   return (
@@ -46,7 +50,6 @@ export default function New() {
         <Input name="title" placeholder="Título do Meetup" />
         <Input multiline name="description" placeholder="Descrição completa" />
 
-        {/* <Input name="date" placeholder="Data do meetup" /> */}
         <DatePicker name="date" placeholder="Data do meetup" />
         <Input name="location" placeholder="Localização" />
 
