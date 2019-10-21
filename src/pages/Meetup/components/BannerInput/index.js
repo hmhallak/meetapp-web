@@ -6,23 +6,29 @@ import api from '~/services/api';
 import { Container, SelectImage } from './styles';
 
 export default function BannerInput({ name }) {
-  const { fieldName, registerField } = useField(name);
+  const { defaultValue, registerField } = useField('banner');
 
   const [file, setFile] = useState([]);
   const [preview, setPreview] = useState([]);
   const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    setFile(defaultValue && defaultValue.id);
+    setPreview(defaultValue && defaultValue.url);
+    setLoaded(defaultValue && true);
+  }, [defaultValue]);
 
   const ref = useRef();
 
   useEffect(() => {
     if (ref.current) {
       registerField({
-        name: fieldName,
+        name: 'banner_id',
         ref: ref.current,
         path: 'dataset.file',
       });
     }
-  }, [ref.current, fieldName]); //eslint-disable-line
+  }, [ref.current]); //eslint-disable-line
 
   async function handleChange(e) {
     const data = new FormData();
@@ -57,7 +63,7 @@ export default function BannerInput({ name }) {
           data-file={file}
           onChange={handleChange}
           ref={ref}
-          name={fieldName}
+          name="banner_id"
         />
       </label>
     </Container>
