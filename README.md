@@ -1,7 +1,8 @@
 
 # Meetapp Web
 
-Meetapp is an api built to organize and participate in meetups. In this api the user can create and subscribe to meetups organized by other people.
+Meetapp is an app built to organize and participate in meetups. 
+In this app the user can create and manage meetups.
 
 This app consists of an api built with NodeJS and Express, a web app built with ReactJS, and a mobile app (iOS) built with React Native. You can reach these repositories following the list below:
 	 
