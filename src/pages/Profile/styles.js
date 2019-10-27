@@ -62,28 +62,4 @@ export const Container = styled.div`
       }
     }
   }
-
-  > button {
-    display: flex;
-    align-items: center;
-    float: right;
-    padding: 0 15px;
-    margin: 10px 0 0;
-    height: 44px;
-    background: #ec592b;
-    font-weight: bold;
-    color: #fff;
-    border: 0;
-    border-radius: 4px;
-    font-size: 16px;
-    transition: background 0.2s;
-
-    &:hover {
-      background: ${darken(0.08, '#ec592b')};
-    }
-
-    svg {
-      margin-right: 5px;
-    }
-  }
 `;

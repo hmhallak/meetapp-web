@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { darken } from 'polished';
 
 export const Container = styled.div`
   background: rgba(0, 0, 0, 0.3);
@@ -62,5 +63,30 @@ export const Profile = styled.div`
     width: 32px;
     height: 32px;
     border-radius: 50%;
+  }
+`;
+
+export const SignOut = styled.button`
+  display: flex;
+  align-self: flex-end;
+  padding: 0 15px;
+  margin: 5px 0 0;
+  height: 44px;
+  background: #f94d6a;
+  font-weight: bold;
+  color: #fff;
+  border: 0;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: background 0.2s;
+  align-items: center;
+  margin-left: 10px;
+
+  &:hover {
+    background: ${darken(0.03, '#f94d6a')};
+  }
+
+  svg {
+    margin-right: 5px;
   }
 `;
